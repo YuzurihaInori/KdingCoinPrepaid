@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_horizontal_margin"
+    xmlns:tool="http://schemas.android.com/tools">
+
+
+    <TextView
+        android:id="@+id/item_union_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_title"
+        android:textColor="@color/colorTextTitle"
+        android:gravity="center"
+        android:drawablePadding="@dimen/listview_vertical_margin"
+        android:layout_centerVertical="true"
+        tool:text="匣币进货"
+        tool:drawableLeft="@mipmap/union_recharge"/>
+
+    <TextView
+        android:id="@+id/item_union_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_content"
+        android:textColor="@color/colorTextContentNormal"
+        android:gravity="center"
+        tool:text="当前折扣50%"
+        android:drawablePadding="@dimen/listview_vertical_margin"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:drawableRight="@mipmap/goto_other" />
+
+</RelativeLayout>

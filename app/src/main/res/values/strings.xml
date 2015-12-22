@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">七萌会</string>
+
+    <string name="main_reg">注册</string>
+
+    <string name="main_login">登录</string>
+    <string name="reg_user_hint">输入账号（数字+字母）</string>
+    <string name="reg_password_hint">输入8位以上的密码</string>
+    <string name="reg_password_confirm_hint">确认密码</string>
+    <string name="reg_normal">注册</string>
+    <string name="reg_suc">注册成功</string>
+    <string name="reg_loading">正在注册...</string>
+    <string name="reg_fail">注册失败</string>
+    <string name="login_title">七匣子手游工会平台</string>
+    <string name="login_user_hint">输入账号</string>
+    <string name="login_password_hint">输入密码</string>
+    <string name="login_normal">登陆</string>
+    <string name="login_suc">登陆成功</string>
+    <string name="login_loading">正在登陆...</string>
+    <string name="login_fail">登陆失败</string>
+    <string name="login_forget_pwd">忘记密码?</string>
+    <string name="change_pwd_tips">为保护您的账号安全，建议您设置较为复杂的密码，如英文+数字、大写英文+数字等，密码不可短于8位</string>
+    <string name="change_pwd_old_pwd_hint">填写原密码</string>
+    <string name="change_pwd_new_pwd_hint">填写新密码</string>
+    <string name="change_pwd_new_pwd_confirm_hint">确认新密码</string>
+    <string name="change_pwd_title">修改密码</string>
+    <string name="change_pwd_submit">确认修改</string>
+    <string name="change_pwd_submit_loading">修改中...</string>
+    <string name="change_pwd_submit_fail">修改失败</string>
+    <string name="change_pwd_submit_suc">修改成功</string>
+    <string name="retrieve_pwd_tips">点击发送验证码，将验证码发送到您所填账号的安全手机，确认验证码后您可以重设密码。为绑定安全账号的用户无法使用该功能</string>
+    <string name="retrieve_pwd_username_hint">填写平台账号</string>
+    <string name="retrieve_pwd_code_hint">输入验证码</string>
+    <string name="retrieve_pwd_send_code">发送验证码</string>
+    <string name="retrieve_pwd_submit">找回密码</string>
+    <string name="retrieve_pwd_submit_loading">验证中...</string>
+    <string name="retrieve_pwd_submit_fail">验证失败</string>
+    <string name="retrieve_pwd_submit_suc">验证成功</string>
+    <string name="retrieve_pwd_title">找回密码</string>
+    <string name="reset_pwd_title">重置密码</string>
+    <string name="reset_pwd_tips">为保护您的账号安全，建议您设置较为复杂的密码，如英文+数字、大写英文+数字等，密码不可短于8位</string>
+    <string name="reset_new_pwd">填写新密码</string>
+    <string name="reset_new_pwd_confirm">确认新密码</string>
+    <string name="reset_pwd_submit">确认修改</string>
+    <string name="reset_pwd_submit_loading">修改中...</string>
+    <string name="reset_pwd_submit_fail">修改失败</string>
+    <string name="reset_pwd_submit_suc">修改成功</string>
+    <string name="select_org_tips">尊敬的会长，请先登记您的工会信息以便工会成员能够快速找到您，工会信息之后可在左上角菜单中修改。</string>
+    <string name="select_org_game_hint">选择游戏（可多选）</string>
+    <string name="select_org_org_hint">填写工会名称</string>
+    <string name="select_org_tips4member">亲爱的玩家，请先选择您的工会，找到组织才能享受更多福利哦~</string>
+    <string name="select_org_game4member_hint">选择游戏</string>
+    <string name="select_org_org4member_hint">选择工会</string>
+    <string name="select_org_title">七匣子手游工会平台</string>
+    <string name="select_org_submit">提交</string>
+    <string name="select_org_submit_loading">提交中...</string>
+    <string name="select_org_submit_suc">提交成功</string>
+    <string name="select_org_submit_fail">提交失败</string>
+    <string name="select_org_list_title">选择游戏</string>
+    <string name="select_org_list_submit">选择完毕</string>
+    <string name="union_title">工会平台</string>
+    <string name="union_menu_union_info">工会信息</string>
+    <string name="union_menu_union_check">入会审核</string>
+    <string name="union_menu_change_pwd">修改密码</string>
+    <string name="union_menu_bandle_phone">手机密保</string>
+    <string name="union_menu_about_cash">提现资料</string>
+    <string name="union_coin_num_tip">账户余额(匣币)</string>
+    <string name="union_income_num_tip">今日收入(元)</string>
+    <string name="union_all_income_num_tip">累计收入(元)</string>
+    <string name="union_coin_to_cash_num_tip">可提现(元)</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#001F3F"
+    android:paddingLeft="@dimen/listview_horizontal_margin"
+    android:paddingRight="@dimen/listview_horizontal_margin"
+    android:paddingTop="@dimen/listview_half_margin"
+    android:paddingBottom="@dimen/listview_half_margin"
+    android:textSize="@dimen/text_size_content"
+    android:textStyle="bold"
+    android:textColor="@android:color/white"
+    tools:text="Animals starting with A"
+    tools:context=".MainActivity"/>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:text="已选xxxxx游戏"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/common_toolbar"
+    android:background="@color/colorSelectBgBlack"
+    android:paddingBottom="@dimen/listview_half_margin"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/listview_half_margin"
+    android:singleLine="true"
+    android:textColor="@color/colorWhite"
+    android:textSize="@dimen/text_size_title" />

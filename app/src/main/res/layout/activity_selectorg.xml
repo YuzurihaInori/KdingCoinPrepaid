@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".v.activity.SelectOrgActivity">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar" />
+
+    <TextView
+        android:id="@+id/select_org_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/common_toolbar"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="@string/select_org_tips" />
+
+
+    <Button
+        android:layout_below="@+id/select_org_title"
+        android:id="@+id/button_select_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:hint="@string/select_org_game_hint"
+        android:inputType="none"
+        android:textSize="@dimen/text_size_title" />
+
+
+    <EditText
+        android:id="@+id/editText_union"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_select_game"
+        android:hint="@string/select_org_org_hint"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size_title" />
+
+    <com.dd.processbutton.iml.ActionProcessButton
+        android:id="@+id/button_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_union"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/select_org_submit"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_title"
+        app:pb_colorComplete="@color/green_complete"
+        app:pb_colorError="@color/red_error"
+        app:pb_colorNormal="?attr/colorPrimary"
+        app:pb_colorPressed="?attr/colorPrimaryDark"
+        app:pb_colorProgress="@color/purple_progress"
+        app:pb_textComplete="@string/select_org_submit_suc"
+        app:pb_textError="@string/select_org_submit_fail"
+        app:pb_textProgress="@string/select_org_submit_loading" />
+
+</RelativeLayout>

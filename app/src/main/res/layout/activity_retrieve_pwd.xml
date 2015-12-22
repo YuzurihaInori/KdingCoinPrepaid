@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.kding.kdingcoinprepaid.v.activity.RetrievePwdActivity">
+
+    <include layout="@layout/common_toolbar"
+        android:id="@+id/common_toolbar"/>
+
+    <TextView
+        android:id="@+id/retrieve_pwd_tips"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:textSize="@dimen/text_size_title"
+        android:text="@string/retrieve_pwd_tips"
+        android:layout_below="@+id/common_toolbar"
+        android:textColor="@color/colorTextTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@+id/retrieve_pwd_tips"
+        android:id="@+id/textInputLayout_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+        <EditText
+            android:id="@+id/editText_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/retrieve_pwd_username_hint"
+            android:textSize="@dimen/text_size_title"
+            android:digits="1234567890qwertyuiopasdfghjklzxcvbnm" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@+id/textInputLayout_user"
+        android:id="@+id/textInputLayout_password_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/button_send_code"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+        <EditText
+            android:id="@+id/editText_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_title"
+            android:hint="@string/retrieve_pwd_code_hint"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_send_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_alignBottom="@+id/textInputLayout_password_code"
+        android:layout_alignParentRight="true"
+        android:text="@string/retrieve_pwd_send_code"/>
+
+    <com.dd.processbutton.iml.ActionProcessButton
+        android:layout_below="@+id/textInputLayout_password_code"
+        android:id="@+id/button_retrieve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/retrieve_pwd_submit"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_title"
+        app:pb_colorComplete="@color/green_complete"
+        app:pb_colorError="@color/red_error"
+        app:pb_colorNormal="?attr/colorPrimary"
+        app:pb_colorPressed="?attr/colorPrimaryDark"
+        app:pb_colorProgress="@color/purple_progress"
+        app:pb_textComplete="@string/retrieve_pwd_submit_suc"
+        app:pb_textError="@string/retrieve_pwd_submit_fail"
+        app:pb_textProgress="@string/retrieve_pwd_submit_loading" />
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/union_info"
+            android:icon="@drawable/union_info"
+            android:title="@string/union_menu_union_info" />
+        <item
+            android:id="@+id/union_check"
+            android:icon="@mipmap/union_check"
+            android:title="@string/union_menu_union_check" />
+    </group>
+
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/change_pwd"
+            android:icon="@mipmap/union_change_pwd"
+            android:title="@string/union_menu_change_pwd" />
+        <item
+            android:id="@+id/bandle_phone"
+            android:icon="@mipmap/union_bandle_phone"
+            android:title="@string/union_menu_bandle_phone" />
+
+    </group>
+
+    <group
+        android:id="@+id/grp3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/about_cash"
+            android:icon="@mipmap/union_about_cash"
+            android:title="@string/union_menu_about_cash" />
+
+    </group>
+</menu>

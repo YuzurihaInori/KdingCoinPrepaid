@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.kding.kdingcoinprepaid.v.activity.UnionActivity"
+    tools:showIn="@layout/app_bar_union">
+
+    <include layout="@layout/textview_top_banner"
+        android:id="@+id/textview_top_banner"/>
+
+    <include layout="@layout/content_union_4_member"
+        android:visibility="gone"
+        android:id="@+id/content_union_4_member"/>
+
+    <include layout="@layout/content_union_4_president"
+        android:visibility="gone"
+        android:id="@+id/content_union_4_president"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/union_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

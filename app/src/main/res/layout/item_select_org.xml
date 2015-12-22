@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/listview_select_item_game_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:textColor="@color/colorTextContent"
+        android:textSize="@dimen/text_size_title"
+        android:layout_toLeftOf="@+id/listview_select_item_check"
+        android:singleLine="true"
+        tools:context=".MainActivity"
+        tools:text="Aardvark" />
+
+    <CheckBox
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        style="@style/SelectOrgCheckboxTheme"
+        android:id="@+id/listview_select_item_check"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="@dimen/listview_horizontal_margin"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

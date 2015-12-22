@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="animals">
+        <item>烈王的分钟</item>
+        <item>船业火线</item>
+        <item>大话西游</item>
+        <item>斗罗大陆</item>
+        <item>到他传奇</item>
+        <item>风云</item>
+        <item>风暴幻想</item>
+        <item>功夫就</item>
+        <item>关门放卢布</item>
+    </string-array>
+</resources>
