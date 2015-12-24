@@ -69,6 +69,47 @@
     <string name="union_all_income_num_tip">累计收入(元)</string>
     <string name="union_coin_to_cash_num_tip">可提现(元)</string>
 
+    <string name="recharge_tips">匣币进货1元起充，匣币储备量不足时，工会成员将无法通过工会折扣充值匣币，敬请留意。</string>
+    <string name="recharge_rmb_tip">进货金额</string>
+    <string name="recharge_rmb_yuan">元</string>
+    <string name="recharge_rmb_hint">输入金额</string>
+    <string name="recharge_discount_tip">当前折扣</string>
+    <string name="recharge_coin_num_tip">匣币数量</string>
+    <string name="recharge_title">匣币进货</string>
+    <string name="recharge_submit">充值</string>
+    <string name="recharge_submit_loading">充值中...</string>
+    <string name="recharge_submit_fail">充值失败</string>
+    <string name="recharge_submit_suc">充值成功</string>
+
+    <string name="carry_over_tips">手动充值功能可以让会长快速将匣币划转至其他玩家的账号，划转流水会和玩家充值流水一起显示在"账户管理-充值流水"类别内。</string>
+    <string name="carry_over_to_hint">填写接收方账号</string>
+    <string name="carry_over_to_confirm_hint">确认接收方账号</string>
+    <string name="carry_over_coin_hint">填写划转匣币数量</string>
+    <string name="carry_over_title">手动充值</string>
+    <string name="carry_over_submit">确认划转</string>
+    <string name="carry_over_submit_loading">划转中...</string>
+    <string name="carry_over_submit_suc">划转成功</string>
+    <string name="carry_over_submit_fail">划转失败</string>
+
+    <string name="m_discount_tips">设置工会成员通过七匣子手游工会平台充值匣币时所享受的折扣，折扣上限不可超过工会渠道自身折扣。</string>
+    <string name="m_discount_cur_discount_tip">当前折扣</string>
+    <string name="m_discount_discount_precent">%</string>
+    <string name="m_discount_discount_hint">输入折扣</string>
+    <string name="m_discount_discount_tip">当前折扣</string>
+    <string name="m_discount_mindiscount_tip">最低折扣</string>
+    <string name="m_discount_title">工会折扣</string>
+    <string name="m_discount_submit">设置折扣</string>
+    <string name="m_discount_submit_loading">设置中...</string>
+    <string name="m_discount_submit_fail">设置失败</string>
+    <string name="m_discount_submit_suc">设置成功</string>
+    <string name="m_discount_warn">注:折扣数额，即"花费原价的百分之几购买"，例如设置为70%，则工会成员充值价值10元的匣币，只需充值7元</string>
+
+    <string name="cash_manager_title">账务管理</string>
+
+
+
+    <string name="load_more">加载更多</string>
+    <string name="msg_waitting_loading">正在加载中，请稍后...</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

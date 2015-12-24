@@ -18,11 +18,9 @@ import java.util.List;
  */
 public class UnionAdapter extends MBaseAdapter<UnionFinalBean,UnionAdapter.UnionHolder>{
 
-    private final ListviewOnclickListener onclickListener;
 
-    public UnionAdapter(Context context,ListviewOnclickListener onclickListener) {
+    public UnionAdapter(Context context) {
         super(context);
-        this.onclickListener = onclickListener;
     }
 
     @Override
@@ -33,24 +31,21 @@ public class UnionAdapter extends MBaseAdapter<UnionFinalBean,UnionAdapter.Union
     @Override
     public void onBindViewHolder(UnionHolder holder, int position) {
 
+        holder.itemView.setTag(getItem(position));
         holder.unionLeft.setText(getItem(position).unionLeft);
-        holder.unionLeft.setCompoundDrawablesWithIntrinsicBounds(getItem(position).unionLeftImg,0,0,0);
+        holder.unionLeft.setCompoundDrawablesWithIntrinsicBounds(getItem(position).unionLeftImg, 0, 0, 0);
         holder.unionRight.setText(getItem(position).unionRight);
-        holder.unionRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onclickListener.onClick(v);
-            }
-        });
     }
 
     public class UnionHolder extends RecyclerView.ViewHolder{
 
         private final TextView unionLeft;
         private final TextView unionRight;
+        private final View itemView;
 
         public UnionHolder(View itemView) {
             super(itemView);
+            this.itemView = itemView;
             unionLeft = (TextView)itemView.findViewById(R.id.item_union_left);
             unionRight = (TextView)itemView.findViewById(R.id.item_union_right);
         }

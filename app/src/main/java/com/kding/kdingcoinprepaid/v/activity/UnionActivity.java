@@ -1,5 +1,6 @@
 package com.kding.kdingcoinprepaid.v.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +21,7 @@ import com.kding.kdingcoinprepaid.p.callback.IUnionInitCallBack;
 import com.kding.kdingcoinprepaid.p.callback.ListviewOnclickListener;
 import com.kding.kdingcoinprepaid.p.impl.UnionImpl;
 import com.kding.kdingcoinprepaid.utils.MToast;
+import com.kding.kdingcoinprepaid.v.adapter.RecyclerItemClickListener;
 import com.kding.kdingcoinprepaid.v.adapter.UnionAdapter;
 import com.kding.kdingcoinprepaid.v.adapter.decoration.DividerDecoration;
 
@@ -27,7 +29,7 @@ import java.util.List;
 
 public class UnionActivity extends BaseCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener ,
-        IUnionInitCallBack,ListviewOnclickListener{
+        IUnionInitCallBack{
 
     private TextView presidentIncome;
     private TextView presidentAllIncome;
@@ -35,13 +37,14 @@ public class UnionActivity extends BaseCompatActivity
     private TextView presidentCoinToCash;
     private TextView memberCoin;
     private UnionAdapter unionAdapter;
+    private UnionImpl unionImpl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_union);
 
-        UnionImpl unionImpl = new UnionImpl(this);
+        unionImpl = new UnionImpl(this,this);
 
         unionImpl.post();
     }
@@ -67,7 +70,7 @@ public class UnionActivity extends BaseCompatActivity
         }else if (id == R.id.union_check){
 
         }else if (id == R.id.change_pwd){
-
+            startActivity(new Intent(mContext,ChangePwdActivity.class));
         }else if (id == R.id.bandle_phone){
 
         }else if (id == R.id.about_cash){
@@ -135,23 +138,27 @@ public class UnionActivity extends BaseCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        unionAdapter = new UnionAdapter(this,this);
+        unionAdapter = new UnionAdapter(this);
         RecyclerView unionListview = (RecyclerView) findViewById(R.id.union_listview);
         unionListview.setLayoutManager(new LinearLayoutManager(this));
         unionListview.addItemDecoration(new DividerDecoration(mContext));
         unionListview.setAdapter(unionAdapter);
 
-    }
 
+        unionListview.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+                unionImpl.gotoActivity((UnionFinalBean) view.getTag());
+
+            }
+        }));
+
+    }
 
     private void bindAdapter(List<UnionFinalBean> unionFinalBeans) {
         unionAdapter.clear();
         unionAdapter.addAll(unionFinalBeans);
     }
 
-    @Override
-    public void onClick(View view) {
-        // TODO: 2015/12/22
-        MToast.showShort(this,"click");
-    }
 }

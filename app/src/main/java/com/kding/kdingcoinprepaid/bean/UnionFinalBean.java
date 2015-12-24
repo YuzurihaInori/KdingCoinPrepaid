@@ -8,4 +8,5 @@ public class UnionFinalBean {
     public String unionLeft = "";
     public int unionLeftImg = 0;
     public String unionRight = "";
+    public String type = "";
 }

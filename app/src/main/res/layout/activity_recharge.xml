@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.kding.kdingcoinprepaid.v.activity.RechargeActivity">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/common_toolbar"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/recharge_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recharge_tips"
+            android:textColor="@color/colorTextTitle"
+            android:textSize="@dimen/text_size_title" />
+
+        <RelativeLayout
+            android:id="@+id/recharge_rmb_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/listview_horizontal_margin"
+            android:padding="@dimen/listview_horizontal_margin"
+            android:layout_below="@+id/recharge_tips">
+
+            <TextView
+                android:id="@+id/recharge_rmb_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/recharge_rmb_tip"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+
+            <EditText
+                android:id="@+id/recharge_rmb_edit"
+                android:layout_width="160dp"
+                android:layout_toRightOf="@+id/recharge_rmb_tips"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/listview_horizontal_margin"
+                android:maxLength="4"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:inputType="number"
+                android:hint="@string/recharge_rmb_hint"
+                android:textSize="@dimen/text_size_title" />
+            <TextView
+                android:id="@+id/recharge_rmb_yuan"
+                android:layout_toRightOf="@+id/recharge_rmb_edit"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="@string/recharge_rmb_yuan"
+                android:textColor="@color/colorTextTitle"
+
+                android:textSize="@dimen/text_size_title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recharge_discount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/listview_horizontal_margin"
+            android:padding="@dimen/listview_horizontal_margin"
+            android:layout_below="@+id/recharge_rmb_layout">
+
+            <TextView
+                android:id="@+id/recharge_discount_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recharge_discount_tip"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+            <TextView
+                android:id="@+id/recharge_discount"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/listview_horizontal_margin"
+                android:layout_toRightOf="@+id/recharge_discount_tip"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recharge_coin_layout"
+            android:layout_width="match_parent"
+            android:padding="@dimen/listview_horizontal_margin"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/listview_horizontal_margin"
+            android:layout_below="@+id/recharge_discount_layout">
+
+            <TextView
+                android:id="@+id/recharge_coin_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recharge_coin_num_tip"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+
+            <TextView
+                android:id="@+id/recharge_coin_num"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/listview_horizontal_margin"
+                android:layout_toRightOf="@+id/recharge_coin_tip"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+        </RelativeLayout>
+
+        <com.dd.processbutton.iml.ActionProcessButton
+            android:layout_below="@+id/recharge_coin_layout"
+            android:id="@+id/recharge_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="@string/recharge_submit"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_title"
+            app:pb_colorComplete="@color/green_complete"
+            app:pb_colorError="@color/red_error"
+            app:pb_colorNormal="?attr/colorPrimary"
+            app:pb_colorPressed="?attr/colorPrimaryDark"
+            app:pb_colorProgress="@color/purple_progress"
+            app:pb_textComplete="@string/recharge_submit_suc"
+            app:pb_textError="@string/recharge_submit_fail"
+            app:pb_textProgress="@string/recharge_submit_loading" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

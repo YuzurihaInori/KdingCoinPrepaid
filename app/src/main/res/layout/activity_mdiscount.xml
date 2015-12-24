@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.kding.kdingcoinprepaid.v.activity.MDiscountActivity">
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/common_toolbar"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/m_discount_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/m_discount_tips"
+            android:textColor="@color/colorTextTitle"
+            android:textSize="@dimen/text_size_title" />
+
+        <RelativeLayout
+            android:id="@+id/m_discount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/listview_horizontal_margin"
+            android:padding="@dimen/listview_horizontal_margin"
+            android:layout_below="@+id/m_discount_tips">
+
+            <TextView
+                android:id="@+id/m_discount_cur_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/m_discount_cur_discount_tip"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout_discount"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/listview_horizontal_margin"
+                android:layout_toRightOf="@+id/m_discount_cur_tips"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat">
+            <EditText
+                android:id="@+id/m_discount_edit"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:maxLength="2"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/m_discount_discount_hint"
+                android:textSize="@dimen/text_size_title" />
+            </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:id="@+id/m_discount_rmb_yuan"
+                android:layout_toRightOf="@+id/textInputLayout_discount"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="@string/m_discount_discount_precent"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/m_discount_discount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/listview_horizontal_margin"
+            android:padding="@dimen/listview_horizontal_margin"
+            android:layout_below="@+id/m_discount_layout">
+
+            <TextView
+                android:id="@+id/m_discount_discount_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/m_discount_mindiscount_tip"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+            <TextView
+                android:id="@+id/m_discount_discount"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/listview_horizontal_margin"
+                android:layout_toRightOf="@+id/m_discount_discount_tip"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+        </RelativeLayout>
+
+        <com.dd.processbutton.iml.ActionProcessButton
+            android:layout_below="@+id/m_discount_discount_layout"
+            android:id="@+id/m_discount_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="@string/m_discount_submit"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_title"
+            app:pb_colorComplete="@color/green_complete"
+            app:pb_colorError="@color/red_error"
+            app:pb_colorNormal="?attr/colorPrimary"
+            app:pb_colorPressed="?attr/colorPrimaryDark"
+            app:pb_colorProgress="@color/purple_progress"
+            app:pb_textComplete="@string/m_discount_submit_suc"
+            app:pb_textError="@string/m_discount_submit_fail"
+            app:pb_textProgress="@string/m_discount_submit_loading" />
+
+        <TextView
+            android:id="@+id/m_discount_warn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin"
+            android:layout_below="@+id/m_discount_submit"
+            android:text="@string/m_discount_warn"
+            android:textColor="@color/colorTextContentNormal"
+            android:textSize="@dimen/text_size_content_normal" />
+    </RelativeLayout>
+</RelativeLayout>

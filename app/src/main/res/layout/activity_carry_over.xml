@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context="com.kding.kdingcoinprepaid.v.activity.CarryOverActivity">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/common_toolbar"
+        android:padding="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/carray_over_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/carry_over_tips"
+            android:textColor="@color/colorTextTitle"
+            android:textSize="@dimen/text_size_title" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout_to_accout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carray_over_tips"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+            <EditText
+                android:id="@+id/carray_over_to_accout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:inputType="text"
+                android:hint="@string/carry_over_to_hint"
+                android:textSize="@dimen/text_size_title" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout_to_accout_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textInputLayout_to_accout"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+            <EditText
+                android:id="@+id/carray_over_to_accout_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:inputType="text"
+                android:hint="@string/carry_over_to_confirm_hint"
+                android:textSize="@dimen/text_size_title" />
+        </android.support.design.widget.TextInputLayout>
+
+        <EditText
+            android:id="@+id/carray_over_coin_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textInputLayout_to_accout_confirm"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:hint="@string/carry_over_coin_hint"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textSize="@dimen/text_size_title" />
+
+        <com.dd.processbutton.iml.ActionProcessButton
+            android:id="@+id/carray_over_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carray_over_coin_num"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="@string/carry_over_submit"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_title"
+            app:pb_colorComplete="@color/green_complete"
+            app:pb_colorError="@color/red_error"
+            app:pb_colorNormal="?attr/colorPrimary"
+            app:pb_colorPressed="?attr/colorPrimaryDark"
+            app:pb_colorProgress="@color/purple_progress"
+            app:pb_textComplete="@string/carry_over_submit_suc"
+            app:pb_textError="@string/carry_over_submit_fail"
+            app:pb_textProgress="@string/carry_over_submit_loading" />
+    </RelativeLayout>
+</RelativeLayout>
