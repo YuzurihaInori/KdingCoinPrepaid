@@ -1,5 +1,6 @@
 package com.kding.kdingcoinprepaid.v.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,9 +15,11 @@ import com.kding.kdingcoinprepaid.R;
 import com.kding.kdingcoinprepaid.bean.AccountBean;
 import com.kding.kdingcoinprepaid.p.callback.IRefreshAndLoadMoreData;
 import com.kding.kdingcoinprepaid.p.callback.IRefreshView;
-import com.kding.kdingcoinprepaid.p.impl.RefreshAndLoadImpl;
+import com.kding.kdingcoinprepaid.p.impl.AccountImpl;
 import com.kding.kdingcoinprepaid.utils.RefreshAndLoadUtil;
+import com.kding.kdingcoinprepaid.v.activity.TradeDetailActivity;
 import com.kding.kdingcoinprepaid.v.adapter.AccountAdapter;
+import com.kding.kdingcoinprepaid.v.adapter.RecyclerItemClickListener;
 
 import java.util.List;
 
@@ -30,9 +33,10 @@ public class AccountFragment extends BaseFragment implements IRefreshView,IRefre
     private String id;
     private String type;
     private AccountAdapter accountAdapter;
-    private RefreshAndLoadImpl refreshAndLoadImpl;
+    private AccountImpl accountImpl;
     private SwipeRefreshLayout mSwipeRefreshWidget;
     private RefreshAndLoadUtil refreshUtil;
+    private RecyclerView recyclerView;
 
     public static Fragment newInstance(String id, String type) {
         Bundle bundle = new Bundle();
@@ -49,6 +53,15 @@ public class AccountFragment extends BaseFragment implements IRefreshView,IRefre
 
         View view = inflater.inflate(R.layout.fragment_account,container,false);
         initView(view);
+
+        refreshUtil = new RefreshAndLoadUtil(getHolder(), accountAdapter, this);
+        refreshUtil.bindRefresh(mSwipeRefreshWidget);
+        refreshUtil.bindLoadMore(recyclerView);
+
+        accountImpl = new AccountImpl(this);
+
+        refreshUtil.autoRefresh();
+
         return view;
     }
 
@@ -57,35 +70,33 @@ public class AccountFragment extends BaseFragment implements IRefreshView,IRefre
         id = getArguments().getString(KEY_VIDEO_ID);
         type = getArguments().getString(KEY_VIDEO_TYPE);
 
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
 
         mSwipeRefreshWidget = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_widget);
         mSwipeRefreshWidget.setColorSchemeResources(R.color.colorPrimary);
 
         accountAdapter = new AccountAdapter(getHolder());
 
-        refreshAndLoadImpl = new RefreshAndLoadImpl(this);
-
-        refreshUtil = new RefreshAndLoadUtil(getHolder(), accountAdapter, this);
-        refreshUtil.bindRefresh(mSwipeRefreshWidget);
-        refreshUtil.bindLoadMore(recyclerView);
-
         accountAdapter.setHasMoreData(true);
         recyclerView.setAdapter(accountAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getHolder()));
-
-        refreshUtil.autoRefresh();
-
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getHolder(), new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                // TODO: 2015/12/25
+                getHolder().startActivity(new Intent(getHolder(), TradeDetailActivity.class));
+            }
+        }));
     }
 
     @Override
     public void onLoadMore() {
-        refreshAndLoadImpl.postLoadMore(id, type);
+        accountImpl.postLoadMore(id, type);
     }
 
     @Override
     public void onRefresh() {
-        refreshAndLoadImpl.postRefresh(id,type);
+        accountImpl.postRefresh(id,type);
     }
 
     @Override

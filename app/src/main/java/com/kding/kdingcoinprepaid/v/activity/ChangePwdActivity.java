@@ -40,7 +40,7 @@ public class ChangePwdActivity extends BaseCompatActivity implements IUserInterf
         textInputLayoutNewPwd = (TextInputLayout)findViewById(R.id.textInputLayout_new_password);
         editTextNewPwd = (EditText)findViewById(R.id.editText_new_pwd);
         textInputLayoutNewPwdC = (TextInputLayout)findViewById(R.id.textInputLayout_new_password_confirm);
-        editTextNewPwdC = (EditText)findViewById(R.id.editText_pwd_confirm);
+        editTextNewPwdC = (EditText)findViewById(R.id.editText_new_pwd_confirm);
         buttonSubmit = (ActionProcessButton)findViewById(R.id.button_change_pwd);
 
 

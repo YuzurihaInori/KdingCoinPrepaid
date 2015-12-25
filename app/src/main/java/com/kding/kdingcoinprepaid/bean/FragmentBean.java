@@ -11,6 +11,7 @@ public class FragmentBean {
     public String id ="";
     public String type ="";
     public String name ="";
+    public String localType ="";
 
 
 }

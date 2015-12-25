@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Toast-pc on 2015/12/24.
  */
-public class RefreshAndLoadImpl implements IRefreshAndLoad {
+public abstract class RefreshAndLoadImpl<T> implements IRefreshAndLoad {
 
     private static final int PAGER_SIZE = 10;
     private int pagerIndex = 1;
@@ -21,60 +21,12 @@ public class RefreshAndLoadImpl implements IRefreshAndLoad {
         this.callback = callback;
     }
 
-    @Override
-    public void postRefresh(String id, String type) {
-
+    public void showRefreshData(List<T> accountBeans){
         pagerIndex = 1;
-
-        List<AccountBean> accountBeans = new ArrayList<>();
-
-        AccountBean accountBean = new AccountBean();
-        accountBean.accountLeft = "Ghost";
-        accountBean.accountMid = "500.00";
-        accountBean.accountRight = "12-24";
-
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-
         callback.showRefreshData(accountBeans);
     }
-
-    @Override
-    public void postLoadMore(String id, String type) {
-        List<AccountBean> accountBeans = new ArrayList<>();
-
-        AccountBean accountBean = new AccountBean();
-        accountBean.accountLeft = "Ghost";
-        accountBean.accountMid = "500.00";
-        accountBean.accountRight = "12-24";
-
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-        accountBeans.add(accountBean);
-
-        callback.showLoadMoreData(accountBeans, accountBeans.size()<PAGER_SIZE);
-
+    public void showLoadMore(List<T> accountBeans){
         pagerIndex++;
+        callback.showLoadMoreData(accountBeans, accountBeans.size()<PAGER_SIZE);
     }
 }

@@ -19,4 +19,9 @@
     <color name="colorTextTitle">#2B2B2B</color>
     <color name="colorTextContent">#595857</color>
     <color name="colorTextContentNormal">#7D7D7D</color>
+
+    <color name="ctc_record_status_suc">#49DE62</color>
+    <color name="ctc_record_status_fail">#2B2B2B</color>
+    <color name="ctc_record_status_opertion">#FF3737</color>
+    <color name="ctc_record_status_examine">#2797FF</color>
 </resources>

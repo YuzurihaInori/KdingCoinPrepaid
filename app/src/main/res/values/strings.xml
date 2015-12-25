@@ -106,6 +106,43 @@
 
     <string name="cash_manager_title">账务管理</string>
 
+    <string name="accout_2_day">本日:%s元</string>
+    <string name="accout_2_week">本周(周一至周日):%s元</string>
+    <string name="accout_2_mouth">本月(月初至月末):%s元</string>
+    <string name="accout_2_all">总计:%s元</string>
+    <string name="accout_2_usable_tip">当前可提现收入(元)</string>
+    <string name="accout_2_left_btn">提现记录</string>
+    <string name="accout_2_right_btn">申请提现</string>
+
+    <string name="trade_detail_title">交易详情</string>
+
+    <string name="coin_to_cash_title">资金提现</string>
+    <string name="coin_to_cash_tips">会员自助充值的返点收入支持提现，若未设置提现资料，设置完成后，才可进行提现操作。</string>
+    <string name="coin_to_cash">可提现收入:%s元</string>
+    <string name="coin_to_cash_card">提现卡号:%s</string>
+    <string name="coin_to_cash_num_tip">提现金额:</string>
+    <string name="coin_to_cash_rmb_yuan">元</string>
+    <string name="coin_to_cash_min">提现下限:%s元</string>
+    <string name="coin_to_cash_remain">您本月还可体现:%s次</string>
+    <string name="coin_to_cash_num_hint">输入提现金额</string>
+    <string name="coin_to_cash_left_btn">提现记录</string>
+    <string name="coin_to_cash_right_btn">提交申请</string>
+    <string name="coin_to_cash_warn">注:若当前收入低于提现下限时，则无法进行提现，提现申请审核通过后的72小时内，提现收入将打入您预设的银行账号内，请注意查收。</string>
+
+    <string name="coin_to_cash_record_title">提现记录</string>
+
+
+    <string name="user_info_tips">您还未设置提现信息，请先进行设置后再进行提现操作。</string>
+    <string name="user_info_name_hint">填写开户人真实姓名</string>
+    <string name="user_info_card_info_hint">填写开户银行，如"工商银行"</string>
+    <string name="user_info_card_num_hint">填写银行卡号</string>
+    <string name="user_info_id_tips">身份证照片(正反面各一张)</string>
+    <string name="user_info_submit">保存资料</string>
+    <string name="user_info_submit_suc">保存成功</string>
+    <string name="user_info_submit_loading">保存中...</string>
+    <string name="user_info_submit_fail">保存失败</string>
+    <string name="user_info_title">提现设置</string>
+    <string name="user_info_warn">注:若因信息填写错误，导致体现金额错发，相关责任与后果由填写者自行承担。</string>
 
 
     <string name="load_more">加载更多</string>

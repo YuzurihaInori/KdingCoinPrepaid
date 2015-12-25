@@ -52,18 +52,34 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kding.kdingcoinprepaid.v.activity.BaseCompatActivity" />
         </activity>
-        <activity android:name=".v.activity.RechargeActivity"
+        <activity
+            android:name=".v.activity.RechargeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".v.activity.CarryOverActivity"
+        <activity
+            android:name=".v.activity.CarryOverActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".v.activity.MDiscountActivity"
+        <activity
+            android:name=".v.activity.MDiscountActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".v.activity.CashManagerActivity"
+        <activity
+            android:name=".v.activity.CashManagerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".v.activity.CoinToCashActivity"
+        <activity
+            android:name=".v.activity.CoinToCashActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".v.activity.GamesActivity"
+        <activity
+            android:name=".v.activity.GamesActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".v.activity.TradeDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".v.activity.CoinToCashRecordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".v.activity.CTCRecordDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".v.activity.UserInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

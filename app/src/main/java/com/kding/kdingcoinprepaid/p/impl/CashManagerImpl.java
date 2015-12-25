@@ -25,19 +25,19 @@ public class CashManagerImpl implements ICashManger{
 
         FragmentBean fragmentBean = new FragmentBean();
         fragmentBean.name = "充值流水";
-        fragmentBean.type = FragmentBean.TYPE_NORMAL;
+        fragmentBean.localType = FragmentBean.TYPE_NORMAL;
 
         FragmentBean fragmentBean2 = new FragmentBean();
         fragmentBean2.name = "进货流水";
-        fragmentBean2.type = FragmentBean.TYPE_NORMAL;
+        fragmentBean2.localType = FragmentBean.TYPE_NORMAL;
 
         FragmentBean fragmentBean3 = new FragmentBean();
         fragmentBean3.name = "返点流水";
-        fragmentBean3.type = FragmentBean.TYPE_NORMAL;
+        fragmentBean3.localType = FragmentBean.TYPE_NORMAL;
 
         FragmentBean fragmentBean4 = new FragmentBean();
         fragmentBean4.name = "收入统计";
-        fragmentBean4.type = FragmentBean.TYPE_SPECIAL;
+        fragmentBean4.localType = FragmentBean.TYPE_SPECIAL;
 
         List<FragmentBean> fragmentBeans = new ArrayList<>();
         fragmentBeans.add(fragmentBean);

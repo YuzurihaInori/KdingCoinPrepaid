@@ -30,7 +30,7 @@ import java.util.List;
 
 public class SelectOrgListActivity extends BaseCompatActivity
         implements ListviewOnclickListener,SelectListChangeObsever,
-        IResultCallBack<List<SelectBean>>{
+        IResultCallBack<SelectBean>{
     private TextView chooseGames;
     private SelectOrgListImpl selectOrgListImpl;
     private String selectOrgKey = "";

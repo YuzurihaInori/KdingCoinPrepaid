@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_widget"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/accout_2_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="@string/accout_2_day"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+
+            <TextView
+                android:id="@+id/accout_2_week"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="@string/accout_2_week"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+
+            <TextView
+                android:id="@+id/accout_2_mouth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="@string/accout_2_mouth"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+
+            <TextView
+                android:id="@+id/accout_2_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="@string/accout_2_all"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_size_title" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:background="?attr/colorPrimary">
+
+                <TextView
+                    android:id="@+id/coin_to_cash_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:text="@string/accout_2_usable_tip"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_size_content"
+                    tool:text="当前可提现收入(元)" />
+
+                <TextView
+                    android:id="@+id/accout_2_coin_to_cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/coin_to_cash_tip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    android:textColor="@color/colorBtnYellow"
+                    android:textSize="@dimen/text_size_header"
+                    android:textStyle="bold"
+                    tool:text="10782.00元" />
+
+            </RelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:id="@+id/coin_to_cash_record_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_widthPercent="50%">
+
+                    <Button
+                        android:id="@+id/coin_to_cash_record"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/btn_main_selector"
+                        android:onClick="regClick"
+                        android:text="@string/accout_2_left_btn"
+                        android:textColor="@color/colorBtnYellow"
+                        android:textSize="@dimen/text_size_content"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/coin_to_cash_record_layout"
+                    app:layout_widthPercent="50%">
+
+                    <Button
+                        android:id="@+id/go_to_coin_to_cash_record"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/btn_main_selector"
+                        android:onClick="loginClick"
+                        android:text="@string/accout_2_right_btn"
+                        android:textColor="@color/colorBtnYellow"
+                        android:textSize="@dimen/text_size_content"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </android.support.percent.PercentRelativeLayout>
+        </LinearLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

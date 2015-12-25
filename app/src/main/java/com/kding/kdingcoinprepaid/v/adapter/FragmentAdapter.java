@@ -8,8 +8,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.kding.kdingcoinprepaid.bean.AccountBean;
 import com.kding.kdingcoinprepaid.bean.CashManagerBean;
 import com.kding.kdingcoinprepaid.bean.FragmentBean;
+import com.kding.kdingcoinprepaid.v.fragment.Account2Fragment;
 import com.kding.kdingcoinprepaid.v.fragment.AccountFragment;
 
 
@@ -27,7 +29,12 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
 
     public void addItem(FragmentBean fragmentBean) {
         fragmentBeans.add(fragmentBean);
-        mFragments.add(AccountFragment.newInstance(fragmentBean.id, fragmentBean.type));
+
+        if (fragmentBean.localType.equals(FragmentBean.TYPE_NORMAL)){
+            mFragments.add(AccountFragment.newInstance(fragmentBean.id, fragmentBean.type));
+        }else {
+            mFragments.add(Account2Fragment.newInstance(fragmentBean.id, fragmentBean.type));
+        }
     }
 
     @Override

@@ -74,7 +74,7 @@ public class UnionActivity extends BaseCompatActivity
         }else if (id == R.id.bandle_phone){
 
         }else if (id == R.id.about_cash){
-
+            startActivity(new Intent(mContext,UserInfoActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -5,6 +5,6 @@ package com.kding.kdingcoinprepaid.p;
  */
 public interface IRefreshAndLoad {
 
-    void postRefresh(String id, String type);
-    void postLoadMore(String id, String type);
+    void postRefresh(String... params);
+    void postLoadMore(String... params);
 }

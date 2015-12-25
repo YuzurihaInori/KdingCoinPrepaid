@@ -28,4 +28,14 @@ public class StringUtils {
         return !(a.equals("")||b.equals("")) && isEqualsUnNull(a,b);
 
     }
+
+    public static int toInt(String string){
+        if (string== null){
+            return 0;
+        }
+        if (string.equals("")){
+            return 0;
+        }
+        return Integer.valueOf(string);
+    }
 }

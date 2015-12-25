@@ -37,7 +37,9 @@ public class RefreshAndLoadUtil {
             public void onRefresh() {
                 if (currentState == STATE_NORMAL) {
                     currentState = STATE_REFRESH;
-                    mAdapter.setHasFooter(true);
+                    if (mAdapter != null) {
+                        mAdapter.setHasFooter(true);
+                    }
                     callBack.onRefresh();
                 } else {
                     SolidToast.make(activity, activity.getString(R.string.msg_waitting_loading), Gravity.BOTTOM).setBackgroundColorId(R.color.colorPrimaryDark).show();
@@ -52,8 +54,10 @@ public class RefreshAndLoadUtil {
             public void onLoadMore() {
                 if (currentState == STATE_NORMAL) {
                     currentState = STATE_LOAD;
-                    mAdapter.setHasFooter(true);
-                    mRecyclerView.scrollToPosition(mAdapter.getItemCount() - 1);
+                    if (mAdapter!=null) {
+                        mAdapter.setHasFooter(true);
+                        mRecyclerView.scrollToPosition(mAdapter.getItemCount() - 1);
+                    }
                     callBack.onLoadMore();
                 } else {
                     SolidToast.make(activity, activity.getString(R.string.msg_waitting_loading), Gravity.BOTTOM).setBackgroundColorId(R.color.colorPrimaryDark).show();

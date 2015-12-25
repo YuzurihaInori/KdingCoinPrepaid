@@ -9,6 +9,11 @@ public class AccountBean {
     public String accountMid ="";
     public String accountRight ="";
 
+    public String account ="";
+
+
+
+
 
 
 }
