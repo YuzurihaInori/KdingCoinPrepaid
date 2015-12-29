@@ -9,6 +9,7 @@ import com.kding.kdingcoinprepaid.bean.UnionFinalBean;
 import com.kding.kdingcoinprepaid.bean.UnionInfoBean;
 import com.kding.kdingcoinprepaid.bean.UserInfoBean;
 import com.kding.kdingcoinprepaid.consts.ConstantTag;
+import com.kding.kdingcoinprepaid.consts.UserType;
 import com.kding.kdingcoinprepaid.p.IUnion;
 import com.kding.kdingcoinprepaid.p.callback.IUnionInitCallBack;
 import com.kding.kdingcoinprepaid.v.activity.CarryOverActivity;
@@ -38,9 +39,9 @@ public class UnionImpl implements IUnion{
         this.initCallback = initCallback;
 
         userInfo = UserInfoImpl.getInstance().getUserInfo();
-        if (userInfo.userType.equals(ConstantTag.USER_TYPE_PRESIDENT)){
+        if (userInfo.getUsertype()== UserType.BIND_PRESIDENT){
             initCallback.initView4President();
-        }else if (userInfo.userType.equals(ConstantTag.USER_TYPE_MEMBER)){
+        }else if (userInfo.getUsertype()== UserType.BIND_MEMBER){
             initCallback.initView4Member("土豪，求交往，求抱大腿~");
         }
     }
@@ -58,7 +59,7 @@ public class UnionImpl implements IUnion{
 
         final List<UnionFinalBean> unionFinalBeans = getUnionFinalBean(unionInfoBean.discount);
 
-        if (userInfo.userType.equals(ConstantTag.USER_TYPE_PRESIDENT)){
+        if (userInfo.getUsertype()==UserType.BIND_PRESIDENT){
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -66,7 +67,7 @@ public class UnionImpl implements IUnion{
                     initCallback.initData4President(unionInfoBean, unionFinalBeans);
                 }
             }, 4000);
-        }else if (userInfo.userType.equals(ConstantTag.USER_TYPE_MEMBER)){
+        }else if (userInfo.getUsertype()==UserType.BIND_MEMBER){
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -135,7 +136,7 @@ public class UnionImpl implements IUnion{
 
         List<UnionFinalBean> unionFinalBeans = new ArrayList<>();
 
-        if (userInfo.userType.equals(ConstantTag.USER_TYPE_PRESIDENT)) {
+        if (userInfo.getUsertype() == UserType.BIND_PRESIDENT) {
 
             UnionFinalBean bean1 = new UnionFinalBean();
             bean1.unionLeftImg = R.mipmap.union_recharge;
@@ -174,7 +175,7 @@ public class UnionImpl implements IUnion{
             unionFinalBeans.add(bean4);
             unionFinalBeans.add(bean5);
             unionFinalBeans.add(bean6);
-        }else if (userInfo.userType.equals(ConstantTag.USER_TYPE_MEMBER)){
+        }else if (userInfo.getUsertype() == UserType.BIND_MEMBER){
 
             UnionFinalBean bean1 = new UnionFinalBean();
             bean1.unionLeftImg = R.mipmap.union_recharge;

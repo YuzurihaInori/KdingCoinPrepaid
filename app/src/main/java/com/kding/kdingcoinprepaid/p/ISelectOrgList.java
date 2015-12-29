@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface ISelectOrgList {
 
-    List<String> getDataFromServer(String tag);
+    List<String> getDataFromServer(String tag,String gameId);
 
     List<String> getSelectData();
     void addSelectData(SelectBean selectName);

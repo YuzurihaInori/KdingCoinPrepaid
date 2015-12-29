@@ -33,9 +33,8 @@ public class AnimalsHeadersAdapter extends AnimalsAdapter<AnimalsHeadersAdapter.
 
     @Override
     public void onBindViewHolder(HeaderViewHolder holder, final int position) {
-        holder.mTextView.setText(getItem(position).selectName);
+        holder.mTextView.setText(getItem(position).name);
 
-        KLog.e("position == " + position + "  " + getItem(position).isSelected());
         holder.mCheckBox.setChecked(getItem(position).isSelected());
         holder.mCheckBox.setTag(getItem(position));
         holder.mCheckBox.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +51,7 @@ public class AnimalsHeadersAdapter extends AnimalsAdapter<AnimalsHeadersAdapter.
         if (position == 0) {
             return -1;
         } else {
-            return FirstLetterUtil.getFirstLetter(getItem(position).selectName).charAt(0);
+            return FirstLetterUtil.getFirstLetter(getItem(position).id).charAt(0);
         }
     }
 
@@ -67,7 +66,7 @@ public class AnimalsHeadersAdapter extends AnimalsAdapter<AnimalsHeadersAdapter.
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder, int position) {
         TextView textView = (TextView) holder.itemView;
-        textView.setText(FirstLetterUtil.getFirstLetter(String.valueOf(getItem(position).selectName.charAt(0))));
+        textView.setText(FirstLetterUtil.getFirstLetter(String.valueOf(getItem(position).id.charAt(0))));
     }
 
     public class HeaderViewHolder extends RecyclerView.ViewHolder {

@@ -29,7 +29,7 @@ public class ChangePwdActivity extends BaseCompatActivity implements IUserInterf
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_pwd);
 
-        userInterfaceImpl = new UserInterfaceImpl(this);
+        userInterfaceImpl = new UserInterfaceImpl(this,this);
 
         initView();
 

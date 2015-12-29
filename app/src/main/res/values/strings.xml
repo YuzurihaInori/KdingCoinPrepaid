@@ -144,6 +144,21 @@
     <string name="user_info_title">提现设置</string>
     <string name="user_info_warn">注:若因信息填写错误，导致体现金额错发，相关责任与后果由填写者自行承担。</string>
 
+    <string name="bind_phone_tip">安全手机作为您找回密码的安全措施，能够有效保护您的账号安全</string>
+    <string name="bind_phone_num_hint">填写手机号码</string>
+    <string name="bind_phone_num_tip">当前绑定手机号码:%s</string>
+    <string name="bind_phone_code_hint">输入验证码</string>
+    <string name="bind_phone_code_button">发送验证码</string>
+    <string name="bind_phone_bind_submit">绑定手机</string>
+    <string name="bind_phone_unbind_submit">解除绑定</string>
+    <string name="bind_phone_bind_submit_loading">绑定中...</string>
+    <string name="bind_phone_bind_submit_suc">绑定成功</string>
+    <string name="bind_phone_bind_submit_fail">绑定失败</string>
+    <string name="bind_phone_unbind_submit_loading">解绑中...</string>
+    <string name="bind_phone_unbind_submit_suc">解绑成功</string>
+    <string name="bind_phone_unbind_submit_fail">解绑失败</string>
+    <string name="bind_phone_title">绑定安全手机</string>
+
 
     <string name="load_more">加载更多</string>
     <string name="msg_waitting_loading">正在加载中，请稍后...</string>

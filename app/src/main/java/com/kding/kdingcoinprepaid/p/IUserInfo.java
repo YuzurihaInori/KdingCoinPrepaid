@@ -1,5 +1,7 @@
 package com.kding.kdingcoinprepaid.p;
 
+import android.content.Context;
+
 import com.kding.kdingcoinprepaid.bean.UserInfoBean;
 
 /**

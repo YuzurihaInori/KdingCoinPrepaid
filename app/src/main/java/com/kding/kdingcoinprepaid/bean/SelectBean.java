@@ -4,15 +4,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-import java.util.Comparator;
-
 /**
  * Created by Toast-pc on 2015/12/21.
  */
 public class SelectBean implements Parcelable ,Comparable<SelectBean>{
 
-    public String selectName = "";
-    public String selectId = "";
+    public String id = "";
+    public String name = "";
     private boolean isChecked;
 
 
@@ -23,8 +21,8 @@ public class SelectBean implements Parcelable ,Comparable<SelectBean>{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.selectName);
-        dest.writeString(this.selectId);
+        dest.writeString(this.id);
+        dest.writeString(this.name);
         dest.writeByte(isChecked ? (byte) 1 : (byte) 0);
     }
 
@@ -32,8 +30,8 @@ public class SelectBean implements Parcelable ,Comparable<SelectBean>{
     }
 
     private SelectBean(Parcel in) {
-        this.selectName = in.readString();
-        this.selectId = in.readString();
+        this.id = in.readString();
+        this.name = in.readString();
         this.isChecked = in.readByte() != 0;
     }
 
@@ -49,13 +47,13 @@ public class SelectBean implements Parcelable ,Comparable<SelectBean>{
 
     @Override
     public String toString() {
-        return selectName+" ";
+        return id +" ";
     }
 
 
     @Override
     public int compareTo(@NonNull SelectBean another) {
-        return this.selectName.compareTo(another.selectName);
+        return this.id.compareTo(another.id);
     }
 
     public boolean isSelected() {

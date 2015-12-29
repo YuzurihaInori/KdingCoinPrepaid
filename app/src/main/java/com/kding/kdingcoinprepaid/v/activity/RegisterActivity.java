@@ -1,5 +1,6 @@
 package com.kding.kdingcoinprepaid.v.activity;
 
+import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.os.Bundle;
 import android.text.Editable;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.dd.processbutton.iml.ActionProcessButton;
+import com.kding.kdingcoinprepaid.consts.KeyConst;
 import com.kding.kdingcoinprepaid.consts.UserInterfaceType;
 import com.kding.kdingcoinprepaid.R;
 import com.kding.kdingcoinprepaid.p.callback.IUserInterfaceCallBack;
@@ -25,12 +27,15 @@ public class RegisterActivity extends BaseCompatActivity implements IUserInterfa
     private ActionProcessButton buttonReg;
     private UserInterfaceImpl regImpl;
 
+    public String mPwd;
+    public String mUserName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        regImpl = new UserInterfaceImpl(this);
+        regImpl = new UserInterfaceImpl(this,this);
 
         initView();
 
@@ -121,6 +126,8 @@ public class RegisterActivity extends BaseCompatActivity implements IUserInterfa
 
 
         buttonReg.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
                String userName = editTextUser.getText().toString();
@@ -140,6 +147,8 @@ public class RegisterActivity extends BaseCompatActivity implements IUserInterfa
                     return;
                 }
 
+                mUserName =userName;
+                mPwd =pwd;
                 regImpl.operation(UserInterfaceType.Reg,userName, pwd);
                 buttonReg.setProgress(50);
                 buttonReg.setClickable(false);
@@ -149,8 +158,16 @@ public class RegisterActivity extends BaseCompatActivity implements IUserInterfa
 
     @Override
     public void operationSuc() {
+
+        setResult(RESULT_OK);
+
         buttonReg.setProgress(100);
         buttonReg.setClickable(true);
+        Intent intent = new Intent(mContext, LoginActivity.class);
+        intent.putExtra(KeyConst.REG_USERNAME_KEY,mUserName);
+        intent.putExtra(KeyConst.REG_PWD_KEY,mPwd);
+        startActivity(intent);
+        finish();
     }
 
     @Override

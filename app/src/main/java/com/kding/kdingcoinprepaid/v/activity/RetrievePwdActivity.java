@@ -52,7 +52,7 @@ public class RetrievePwdActivity extends BaseCompatActivity implements IUserInte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrieve_pwd);
 
-        userInterfaceImpl = new UserInterfaceImpl(this);
+        userInterfaceImpl = new UserInterfaceImpl(this,this);
 
 
         if (getIntent()!=null){

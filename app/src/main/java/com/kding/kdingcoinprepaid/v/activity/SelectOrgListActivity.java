@@ -21,6 +21,7 @@ import com.kding.kdingcoinprepaid.utils.MToast;
 import com.kding.kdingcoinprepaid.v.adapter.AnimalsHeadersAdapter;
 import com.kding.kdingcoinprepaid.v.adapter.RecyclerItemClickListener;
 import com.kding.kdingcoinprepaid.v.adapter.decoration.DividerDecoration;
+import com.socks.library.KLog;
 
 import java.text.Collator;
 import java.util.Arrays;
@@ -29,8 +30,8 @@ import java.util.List;
 
 
 public class SelectOrgListActivity extends BaseCompatActivity
-        implements ListviewOnclickListener,SelectListChangeObsever,
-        IResultCallBack<SelectBean>{
+        implements ListviewOnclickListener, SelectListChangeObsever,
+        IResultCallBack<SelectBean> {
     private TextView chooseGames;
     private SelectOrgListImpl selectOrgListImpl;
     private String selectOrgKey = "";
@@ -42,17 +43,18 @@ public class SelectOrgListActivity extends BaseCompatActivity
         setContentView(R.layout.activity_select_org_list);
 
 
-        selectOrgListImpl = new SelectOrgListImpl(this,this,this);
+        selectOrgListImpl = new SelectOrgListImpl(this, this, this);
 
 
         initView();
 
         Intent intent = getIntent();
 
-        if (intent !=null){
-            selectOrgKey = intent.getStringExtra(ConstantTag.SELECT_ORG_KEY);
-            selectOrgListImpl.getDataFromServer(selectOrgKey);
-        }
+        selectOrgKey = intent.getStringExtra(ConstantTag.SELECT_ORG_KEY);
+
+        KLog.e("--------------"+selectOrgKey);
+        String gameId = intent.getStringExtra(ConstantTag.SELECT_GAME_ID_KEY);
+        selectOrgListImpl.getDataFromServer(selectOrgKey,gameId);
     }
 
     private void initView() {
@@ -103,7 +105,8 @@ public class SelectOrgListActivity extends BaseCompatActivity
 
     @Override
     public void onListChange(String games) {
-        chooseGames.setText("已选"+games+"游戏");
+        chooseGames.setText("已选" + games + "游戏");
+        adapter.notifyDataSetChanged();
     }
 
 
@@ -114,12 +117,13 @@ public class SelectOrgListActivity extends BaseCompatActivity
 
     @Override
     public void resultFail(String errorMsg) {
-        MToast.showShort(mContext,errorMsg);
+        MToast.showShort(mContext, errorMsg);
     }
 
     @Override
     public void onClick(View view) {
-        SelectBean selectBean = (SelectBean)view.getTag();
-        selectOrgListImpl.addSelectData(selectBean);
+
+            SelectBean selectBean = (SelectBean) view.getTag();
+            selectOrgListImpl.addSelectData(selectBean);
     }
 }

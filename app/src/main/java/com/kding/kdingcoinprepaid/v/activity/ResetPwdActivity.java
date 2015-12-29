@@ -31,7 +31,7 @@ public class ResetPwdActivity extends BaseCompatActivity implements IUserInterfa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_pwd);
 
-        resetImpl = new UserInterfaceImpl(this);
+        resetImpl = new UserInterfaceImpl(this,this);
 
         Intent intent= getIntent();
         if (intent !=null && intent.getStringExtra(ConstantTag.USERNAME_KEY)!=null){

@@ -21,6 +21,8 @@ public class SelectOrgActivity extends BaseCompatActivity implements IUserInterf
 
     private ActionProcessButton buttonSelect;
     private SelectOrgImpl selectOrgImpl;
+    private Button buttonGame;
+    private EditText editTextUnion;
 
 
     @Override
@@ -35,8 +37,8 @@ public class SelectOrgActivity extends BaseCompatActivity implements IUserInterf
     }
 
     private void initView() {
-        Button buttonGame = (Button) findViewById(R.id.button_select_game);
-        EditText editTextUnion = (EditText) findViewById(R.id.editText_union);
+        buttonGame = (Button) findViewById(R.id.button_select_game);
+        editTextUnion = (EditText) findViewById(R.id.editText_union);
         buttonSelect = (ActionProcessButton)findViewById(R.id.button_select);
 
         setTooblBar(R.id.common_toolbar, R.string.select_org_title, false, false);
@@ -45,7 +47,7 @@ public class SelectOrgActivity extends BaseCompatActivity implements IUserInterf
         buttonGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(selectOrgImpl.getGameEditTextIntent(), ConstantTag.SELECT_REQUESTCODE);
+                startActivityForResult(selectOrgImpl.getGameEditTextIntent(), ConstantTag.SELECT_GAME_REQUESTCODE);
             }
         });
 
@@ -61,7 +63,7 @@ public class SelectOrgActivity extends BaseCompatActivity implements IUserInterf
             @Override
             public void onClick(View view) {
                 if (!selectOrgImpl.getUnionEditTextClickable()) {
-                    startActivityForResult(selectOrgImpl.getUnionEditTextIntent(), ConstantTag.SELECT_REQUESTCODE);
+                    startActivityForResult(selectOrgImpl.getUnionEditTextIntent(), ConstantTag.SELECT_UNION_REQUESTCODE);
                 }
             }
         });
@@ -95,6 +97,12 @@ public class SelectOrgActivity extends BaseCompatActivity implements IUserInterf
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == ConstantTag.SELECT_GAME_REQUESTCODE){
+            buttonGame.setText("已选择");
+        }else{
+            editTextUnion.setText("已选择");
+        }
 
         selectOrgImpl.setPostData(requestCode, resultCode, data);
     }
